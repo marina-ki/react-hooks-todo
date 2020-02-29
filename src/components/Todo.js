@@ -2,8 +2,10 @@ import React from 'react'
 
 const Todo = ({ dispatch, todo }) => {
   const id = todo.id
-  const handleClickDeleteButton = () => {
-    dispatch({ type: 'DELETE_TODO', id })
+  const handleClickDeleteButton = e => {
+    e.preventDefault()
+    const result = window.confirm('本当に削除しても良いですか？')
+    if (result) dispatch({ type: 'DELETE_TODO', id })
   }
 
   return (

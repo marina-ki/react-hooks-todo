@@ -7,6 +7,8 @@ const todos = (state = [], action) => {
       return [...state, { id, ...event }]
     case 'DELETE_TODO':
       return state.filter(todo => todo.id !== action.id)
+    case 'DELETE_ALL_TODOS':
+      return [];
     default:
       return state
   }
