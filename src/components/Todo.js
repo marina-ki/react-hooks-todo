@@ -1,11 +1,11 @@
 import React from 'react'
-
+import {DELETE_TODO} from '../actions'
 const Todo = ({ dispatch, todo }) => {
   const id = todo.id
   const handleClickDeleteButton = e => {
     e.preventDefault()
     const result = window.confirm('本当に削除しても良いですか？')
-    if (result) dispatch({ type: 'DELETE_TODO', id })
+    if (result) dispatch({ type: DELETE_TODO, id })
   }
 
   return (

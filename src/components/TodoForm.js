@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import {CREATE_TODO} from '../actions'
 const TodoForm = ({ state, dispatch }) => {
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
@@ -7,7 +7,7 @@ const TodoForm = ({ state, dispatch }) => {
   const addTodo = e => {
     e.preventDefault()
     dispatch({
-     type: 'CREATE_TODO',
+     type: CREATE_TODO,
      title,
      body
     })

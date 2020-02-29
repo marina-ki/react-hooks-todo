@@ -3,13 +3,14 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import reducer from '../reducers'
 import Todos from './Todos'
 import TodoForm from './TodoForm'
+import {DELETE_ALL_TODOS} from '../actions'
 // TODO: 重要 あとでやること など，枠を増やせる
 const App = () => {
   const [state, dispatch] = useReducer(reducer, [])
   const deleteAllTodos = e => {
     e.preventDefault()
     const result = window.confirm('全てのTodoを本当に削除しても良いですか？')
-    if (result) dispatch({ type: 'DELETE_ALL_TODOS' })
+    if (result) dispatch({ type: DELETE_ALL_TODOS })
   }
   return (
     <div className="container-fluid">
