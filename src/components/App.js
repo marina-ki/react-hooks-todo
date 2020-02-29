@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { useEffect, useReducer } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import reducer from '../reducers'
 import Todos from './Todos'
@@ -7,8 +7,11 @@ import {DELETE_ALL_TODOS} from '../actions'
 import AppContext from '../contexts/AppContext'
 // TODO: 重要 あとでやること など，枠を増やせる
 // TODO: 最新のを上につくる
+const APP_KEY = 'appRedux'
+
 const App = () => {
-  const initialState = {
+  const appState = localStorage.getItem(APP_KEY)
+  const initialState = appState ? JSON.parse(appState) : {
     todos: []
   }
   const [state, dispatch] = useReducer(reducer, initialState)
@@ -17,7 +20,9 @@ const App = () => {
     const result = window.confirm('全てのTodoを本当に削除しても良いですか？')
     if (result) dispatch({ type: DELETE_ALL_TODOS })
   }
-  console.log(state)
+  useEffect(() => {
+    localStorage.setItem(APP_KEY, JSON.stringify(state))
+  }, [state])
   return (
     <AppContext.Provider value={{ state, dispatch }}>
       <div className="container-fluid">
