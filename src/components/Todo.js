@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import {DELETE_TODO} from '../actions'
+import { DELETE_TODO, DONE_TODO } from '../actions'
 import AppContext from '../contexts/AppContext'
 const Todo = ({ todo }) => {
   const { dispatch } = useContext(AppContext)
@@ -15,6 +15,11 @@ const Todo = ({ todo }) => {
   const handleClickSaveButton = e => {
     e.preventDefault()
     setEditting(false)
+  }
+  const handleClickDoneButton = e => {
+    e.preventDefault()
+    const result = window.confirm('本当に完了しましたか？')
+    if (result) dispatch({ type: DONE_TODO, id })
   }
   const handleClickDeleteButton = e => {
     e.preventDefault()
@@ -38,7 +43,7 @@ const Todo = ({ todo }) => {
         <button className="btn btn-warning btn-sm" onClick={handleClickEditButton}>編集</button>
         </>
       )}
-
+        <button className="btn btn-success btn-sm" onClick={handleClickDoneButton}>完了</button>
         <button className="btn btn-danger btn-sm" onClick={handleClickDeleteButton}>削除</button>
       </div>
     </div>

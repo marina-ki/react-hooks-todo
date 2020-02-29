@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import TodoForm from './TodoForm'
 import Todos from './Todos'
 import {DELETE_LIST} from '../actions'
@@ -6,6 +6,16 @@ import AppContext from '../contexts/AppContext'
 const List = ({list}) => {
   const { dispatch } = useContext(AppContext)
   const id = list.id
+  const [ editting, setEditting ] = useState(false);
+  const [title, setTitle] = useState(list.title)
+  const handleClickEditButton = e => {
+    e.preventDefault()
+    setEditting(true)
+  }
+  const handleClickSaveButton = e => {
+    e.preventDefault()
+    setEditting(false)
+  }
   const handleClickDeleteButton = e => {
     e.preventDefault()
     const result = window.confirm('リスト内のTODOも削除されますがよろしいですか？')
@@ -13,10 +23,16 @@ const List = ({list}) => {
   }
   return (
     <div className="col-md-4">
-
       <div className="list-container">
         <button className="btn delete-list" onClick={handleClickDeleteButton}>╳</button>
-        <div className="list-title">{list.title}</div>
+        {editting?(
+          <>
+            <input className="list-title" value={title} onChange={e => setTitle(e.target.value)}></input>
+            <button className="btn btn-warning btn-sm" onClick={handleClickSaveButton}>保存</button>
+          </>
+        ):(
+          <div className="list-title" onClick={handleClickEditButton}>{title}</div>
+        )}
         <div className="glyphicon glyphicon-remove"></div>
         <Todos listId={id}/>
         <TodoForm listId={id}/>

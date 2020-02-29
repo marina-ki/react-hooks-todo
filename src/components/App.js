@@ -1,8 +1,7 @@
 import React, { useEffect, useReducer } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import reducer from '../reducers'
-import Todos from './Todos'
-import TodoForm from './TodoForm'
+import DoneList from './DoneList'
 import Lists from './Lists'
 import ListForm from './ListForm'
 import { DELETE_ALL_TODOS, } from '../actions'
@@ -16,7 +15,6 @@ library.add(fab, faCheckSquare, faCoffee)
 // TODO: 重要 あとでやること など，枠を増やせる
 // TODO: 最新のを上につくる
 const APP_KEY = 'Redux'
-
 const App = () => {
   const appState = localStorage.getItem(APP_KEY)
   const initialState = appState ? JSON.parse(appState) : {
@@ -48,6 +46,10 @@ const App = () => {
             <div className="row">
             <Lists/>
             </div>
+          </div>
+          <div>
+            完了したこと一覧
+            <DoneList/>
           </div>
         </div>
 

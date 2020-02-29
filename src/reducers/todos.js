@@ -2,6 +2,7 @@ import {
   CREATE_TODO,
   DELETE_TODO,
   DELETE_ALL_TODOS,
+  DONE_TODO
 } from '../actions'
 
 const todos = (state = [], action) => {
@@ -15,6 +16,8 @@ const todos = (state = [], action) => {
       return state.filter(todo => todo.id !== action.id)
     case DELETE_ALL_TODOS:
       return [];
+    case DONE_TODO:
+      return state.map(todo => todo.id === action.id ? {...todo, listId: "done"} : todo)
     default:
       return state
   }
