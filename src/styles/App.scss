@@ -17,9 +17,14 @@
     margin: 10px;
   }
 
-  .todo-container {
+  .list-container {
     padding: 10px;
     border-radius: 5px;
     background-color: lightgray;
+    .list-title {
+      padding: 0 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
   }
 }

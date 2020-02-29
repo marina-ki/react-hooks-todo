@@ -3,17 +3,19 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import reducer from '../reducers'
 import Todos from './Todos'
 import TodoForm from './TodoForm'
-import {DELETE_ALL_TODOS} from '../actions'
+import Lists from './Lists'
+import ListForm from './ListForm'
+import { DELETE_ALL_TODOS, } from '../actions'
 import AppContext from '../contexts/AppContext'
 import '../styles/App.scss';
 // TODO: 重要 あとでやること など，枠を増やせる
 // TODO: 最新のを上につくる
-const APP_KEY = 'appRedux'
+const APP_KEY = 'Redux'
 
 const App = () => {
   const appState = localStorage.getItem(APP_KEY)
   const initialState = appState ? JSON.parse(appState) : {
-    todos: []
+    todos: [], lists: []
   }
   const [state, dispatch] = useReducer(reducer, initialState)
   const deleteAllTodos = e => {
@@ -32,25 +34,14 @@ const App = () => {
           <h1>Todoアプリ</h1>
         </div>
 
-        <TodoForm/>
-
         <div className="todo-index">
           <h4>Todo一覧</h4>
 
           <button className="btn btn-secondary btn-sm btn-delete" onClick={deleteAllTodos} disabled={state.todos.length === 0}>全てのTodoを削除する</button>
-
+          <ListForm/>
           <div className="container">
             <div className="row">
-              <div className="col-md-3">
-                <div className="todo-container">
-                  <Todos/>
-                </div>
-              </div>
-              <div className="col-md-3">
-                <div className="todo-container">
-                  <Todos/>
-                </div>
-              </div>
+            <Lists/>
             </div>
           </div>
         </div>
