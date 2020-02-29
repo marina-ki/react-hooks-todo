@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import TodoForm from './TodoForm'
 import Todos from './Todos'
-import {DELETE_LIST} from '../actions'
+import { DELETE_LIST, UPDATE_LIST } from '../actions'
 import AppContext from '../contexts/AppContext'
 const List = ({list}) => {
   const { dispatch } = useContext(AppContext)
@@ -14,6 +14,7 @@ const List = ({list}) => {
   }
   const handleClickSaveButton = e => {
     e.preventDefault()
+    dispatch({ type: UPDATE_LIST, id, title })
     setEditting(false)
   }
   const handleClickDeleteButton = e => {
@@ -33,7 +34,6 @@ const List = ({list}) => {
         ):(
           <div className="list-title" onClick={handleClickEditButton}>{title}</div>
         )}
-        <div className="glyphicon glyphicon-remove"></div>
         <Todos listId={id}/>
         <TodoForm listId={id}/>
       </div>

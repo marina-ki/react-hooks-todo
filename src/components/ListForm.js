@@ -18,7 +18,7 @@ const TodoFormBox = () => {
   const unCreatable = title === ''
 
   return (
-    <>
+    <div className="list-form">
       <h4>リストを追加</h4>
       <form>
         <div className="card">
@@ -29,7 +29,7 @@ const TodoFormBox = () => {
         </div>
         </div>
       </form>
-      </>
+      </div>
   )
 }
 

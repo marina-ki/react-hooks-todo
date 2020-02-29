@@ -4,12 +4,17 @@
     text-align: center;
   }
 }
+.list-form {
+  margin-bottom: 20px;
+}
 
 .todo-index{
   margin: 20px 0;
-  .add-card {
-    font-weight: bold;
-    margin: 10px 20px;
+  .btn {
+    margin: 3px;
+  }
+  .todo-form {
+    margin-top: 10px;
   }
   .btn-delete {
     margin-bottom: 10px;
@@ -19,7 +24,9 @@
   }
 
   .list-container {
+    min-height: 100px;
     padding: 10px;
+    margin-bottom: 10px;
     border-radius: 5px;
     background-color: lightgray;
     .delete-list {

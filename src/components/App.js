@@ -20,6 +20,7 @@ const App = () => {
   const initialState = appState ? JSON.parse(appState) : {
     todos: [], lists: []
   }
+  console.log(initialState)
   const [state, dispatch] = useReducer(reducer, initialState)
   const deleteAllTodos = e => {
     e.preventDefault()
@@ -38,17 +39,14 @@ const App = () => {
         </div>
 
         <div className="todo-index">
-          <h4>Todo一覧</h4>
-
-          <button className="btn btn-secondary btn-sm btn-delete" onClick={deleteAllTodos} disabled={state.todos.length === 0}>全てのTodoを削除する</button>
           <ListForm/>
           <div className="container">
             <div className="row">
             <Lists/>
             </div>
           </div>
-          <div>
-            完了したこと一覧
+          <div class="done-list">
+            <h4>完了したこと一覧</h4>
             <DoneList/>
           </div>
         </div>
