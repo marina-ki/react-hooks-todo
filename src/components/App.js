@@ -4,6 +4,7 @@ import reducer from '../reducers'
 import Todos from './Todos'
 import TodoForm from './TodoForm'
 import {DELETE_ALL_TODOS} from '../actions'
+import AppContext from '../contexts/AppContext'
 // TODO: 重要 あとでやること など，枠を増やせる
 const App = () => {
   const [state, dispatch] = useReducer(reducer, [])
@@ -13,15 +14,17 @@ const App = () => {
     if (result) dispatch({ type: DELETE_ALL_TODOS })
   }
   return (
-    <div className="container-fluid">
-      <h1>Todoアプリ</h1>
-      <TodoForm dispatch={dispatch}/>
-      <button className="btn btn-danger" onClick={deleteAllTodos} disabled={state.length === 0}>全てのTodoを削除する</button>
+    <AppContext.Provider value={{ state, dispatch }}>
+      <div className="container-fluid">
+        <h1>Todoアプリ</h1>
+        <TodoForm/>
+        <button className="btn btn-danger" onClick={deleteAllTodos} disabled={state.length === 0}>全てのTodoを削除する</button>
 
-      <h4>Todo一覧</h4>
-      <Todos state={state} dispatch={dispatch}/>
+        <h4>Todo一覧</h4>
+        <Todos/>
 
-    </div>
+      </div>
+    </AppContext.Provider>
   )
 }
 

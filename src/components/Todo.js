@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {DELETE_TODO} from '../actions'
-const Todo = ({ dispatch, todo }) => {
+import AppContext from '../contexts/AppContext'
+const Todo = ({ todo }) => {
+  const { dispatch } = useContext(AppContext)
   const id = todo.id
   const handleClickDeleteButton = e => {
     e.preventDefault()

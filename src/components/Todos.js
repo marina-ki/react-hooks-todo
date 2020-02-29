@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Todo from './Todo'
-const Todos = ({ state,dispatch }) => {
+import AppContext from '../contexts/AppContext'
+const Todos = () => {
+  const {state} = useContext(AppContext);
   return (
     <>
-    {state.map((todo, index) => (<Todo key={index} todo={todo} dispatch={dispatch} />))}
+    {state.map((todo, index) => (<Todo key={index} todo={todo}/>))}
     </>
   )
 }
