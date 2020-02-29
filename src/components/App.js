@@ -1,6 +1,6 @@
 import React, { useReducer, useState } from 'react'
-
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Todo from './Todo'
 import reducer from '../reducers'
 
 const App = () => {
@@ -37,14 +37,8 @@ const App = () => {
   
 
       <h4>Todo一覧</h4>
-      <div className="card">
+      {state.map((todo, index) => (<Todo key={index} todo={todo} dispatch={dispatch} />))}
 
-<div className="card-body">
-  <h5 className="card-title">サンプルタイトル</h5>
-  <p className="card-text">サンプル詳細</p>
-  <button className="btn btn-primary">削除する</button>
-</div>
-</div>
     </div>
   )
 }
