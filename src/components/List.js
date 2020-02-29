@@ -32,7 +32,7 @@ const List = ({list}) => {
             <button className="btn btn-warning btn-sm" onClick={handleClickSaveButton}>保存</button>
           </>
         ):(
-          <div className="list-title" onClick={handleClickEditButton}>{list.title}</div>
+          <div className="list-title" onClick={handleClickEditButton}>{title}</div>
         )}
         <Todos listId={id}/>
         <TodoForm listId={id}/>
