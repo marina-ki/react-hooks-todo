@@ -5,7 +5,7 @@ const Todos = () => {
   const {state} = useContext(AppContext);
   return (
     <>
-    {state.map((todo, index) => (<Todo key={index} todo={todo}/>))}
+    {state.todos.map((todo, index) => (<Todo key={index} todo={todo}/>))}
     </>
   )
 }
