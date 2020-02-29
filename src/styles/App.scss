@@ -7,8 +7,9 @@
 
 .todo-index{
   margin: 20px 0;
-  h4 {
-    margin: 10px 0;
+  .add-card {
+    font-weight: bold;
+    margin: 10px 20px;
   }
   .btn-delete {
     margin-bottom: 10px;
@@ -21,6 +22,11 @@
     padding: 10px;
     border-radius: 5px;
     background-color: lightgray;
+    .delete-list {
+      position: absolute;
+      top:0;
+      right: 10px;
+    }
     .list-title {
       padding: 0 20px;
       font-size: 18px;

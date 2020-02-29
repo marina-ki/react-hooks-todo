@@ -8,6 +8,11 @@ import ListForm from './ListForm'
 import { DELETE_ALL_TODOS, } from '../actions'
 import AppContext from '../contexts/AppContext'
 import '../styles/App.scss';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
+
+library.add(fab, faCheckSquare, faCoffee)
 // TODO: 重要 あとでやること など，枠を増やせる
 // TODO: 最新のを上につくる
 const APP_KEY = 'Redux'

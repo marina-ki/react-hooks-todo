@@ -22,10 +22,9 @@ const TodoForm = ({listId}) => {
 
   return (
     <>
-      <h4>カードを追加</h4>
       <form>
         <div className="card">
-
+        <div className="add-card">カードを追加</div>
         <div className="card-body">
           <h5 className="card-title"><input className="form-control" id="formEventTitle" placeholder="タイトル"  value={title} onChange={e => setTitle(e.target.value)}/></h5>
           <p className="card-text"><textarea className="form-control" id="formEventBody" placeholder="詳細"  value={body} onChange={e => setBody(e.target.value)}/></p>
