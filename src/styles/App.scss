@@ -1,0 +1,25 @@
+.title {
+  margin: 20px;
+  h1 {
+    text-align: center;
+  }
+}
+
+.todo-index{
+  margin: 20px 0;
+  h4 {
+    margin: 10px 0;
+  }
+  .btn-delete {
+    margin-bottom: 10px;
+  }
+  .todo-card {
+    margin: 10px;
+  }
+
+  .todo-container {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: lightgray;
+  }
+}

@@ -11,11 +11,11 @@ const Todo = ({ todo }) => {
   }
 
   return (
-    <div className="card">
+    <div className="card todo-card">
       <div className="card-body">
         <h5 className="card-title">{todo.title}</h5>
         <p className="card-text">{todo.body}</p>
-        <button className="btn btn-danger" onClick={handleClickDeleteButton}>削除する</button>
+        <button className="btn btn-danger btn-sm" onClick={handleClickDeleteButton}>削除する</button>
       </div>
     </div>
   )
