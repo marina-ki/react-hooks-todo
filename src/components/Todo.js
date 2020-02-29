@@ -1,11 +1,13 @@
-import React from 'react'
-
-const Todo = ({ dispatch, todo }) => {
+import React, { useContext } from 'react'
+import {DELETE_TODO} from '../actions'
+import AppContext from '../contexts/AppContext'
+const Todo = ({ todo }) => {
+  const { dispatch } = useContext(AppContext)
   const id = todo.id
   const handleClickDeleteButton = e => {
     e.preventDefault()
     const result = window.confirm('本当に削除しても良いですか？')
-    if (result) dispatch({ type: 'DELETE_TODO', id })
+    if (result) dispatch({ type: DELETE_TODO, id })
   }
 
   return (
