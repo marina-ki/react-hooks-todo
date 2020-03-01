@@ -13,7 +13,7 @@ const lists = (state = [], action) => {
       return [...state, { id, ...list }]
     case UPDATE_LIST:
       return state.map(list => list.id === action.id ? {...list, title: action.title, body: action.body} : list)
-    case DELETE_LIST:
+    case DELETE_LIST:   
       return state.filter(list => list.id !== action.id)
     default:
       return state

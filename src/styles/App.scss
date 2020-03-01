@@ -4,7 +4,7 @@ body {
 .main {
   background: linear-gradient(to top, rgba(217, 175, 217, 0.7) 0%, rgba(151, 217, 225, 0.7) 100%),url("https://cdn.pixabay.com/photo/2016/10/14/18/08/hume-1740828_1280.jpg");
   background-size: cover;
-  min-height: 100vh;
+  padding-bottom: 20px;
 }
 .header {
   padding: 20px;

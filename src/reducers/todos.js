@@ -3,7 +3,8 @@ import {
   DELETE_TODO,
   DELETE_ALL_TODOS,
   DONE_TODO,
-  UPDATE_TODO
+  UPDATE_TODO,
+  DELETE_LIST_TODO
 } from '../actions'
 
 const todos = (state = [], action) => {
@@ -14,8 +15,9 @@ const todos = (state = [], action) => {
       const id = length === 0 ? 1 : state[length - 1].id + 1
       return [...state, { id, ...todo }]
     case DELETE_TODO:
-      console.log(state)
       return state.filter(todo => todo.id !== action.id)
+    case DELETE_LIST_TODO:
+      return state.filter(todo => todo.listId !== action.id)
     case DELETE_ALL_TODOS:
       return [];
     case UPDATE_TODO:
