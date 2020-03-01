@@ -35,7 +35,7 @@ const Todo = ({ todo }) => {
         {todo.listId === "done"?(
           <>
             <h5 className="card-title">{todo.title}</h5>
-            <TextareaAutosize className="card-text">{todo.body}</TextareaAutosize>
+            <p className="card-text">{todo.body}</p>
             <button className="btn btn-danger btn-sm" onClick={handleClickDeleteButton}>削除</button>
           </>
         ): editting?(
