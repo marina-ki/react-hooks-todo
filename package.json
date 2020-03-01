@@ -16,6 +16,9 @@
     "react-textarea-autosize": "^7.1.2",
     "redux": "4.0.1"
   },
+  "engines": {
+    "node": "12.13.0"
+  },
   "scripts": {
     "build": "react-scripts build && mv build docs",
     "eject": "react-scripts eject",
