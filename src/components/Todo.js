@@ -36,7 +36,7 @@ const Todo = ({ todo }) => {
           <>
             <h5 className="card-title">{todo.title}</h5>
             <p className="card-text">{todo.body}</p>
-            <button className="btn btn-danger btn-sm" onClick={handleClickDeleteButton}>削除</button>
+            <div className="btn-done-delete" onClick={handleClickDeleteButton}>╳</div>
           </>
         ): editting?(
           <>

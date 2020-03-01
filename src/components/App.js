@@ -8,8 +8,7 @@ import { DELETE_ALL_TODOS, } from '../actions'
 import AppContext from '../contexts/AppContext'
 import '../styles/App.scss';
 
-// TODO: 重要 あとでやること など，枠を増やせる
-// TODO: 最新のを上につくる
+// TODO: drag&dropでリスト内の移動ができるように→リスト間の移動もできるように
 const APP_KEY = 'Redux'
 const App = () => {
   const appState = localStorage.getItem(APP_KEY)
@@ -29,24 +28,27 @@ const App = () => {
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>
-      <div className="container">
-        <div className="title">
-          <h1>Todoアプリ</h1>
+      <div className="main">
+        <div className="header">
+          <h1>TODO</h1>
         </div>
-
-        <div className="todo-index">
-          <ListForm/>
-          <div className="container">
-            <div className="row">
-            <Lists/>
+        <div className="container">
+          <div className="todo-index">
+            <ListForm/>
+            <div className="container">
+              <div className="row">
+                <Lists/>
+              </div>
+            </div>
+            <div className="done-list">
+              <h4 className="done-title">完了したTODO</h4>
+              <DoneList/>
             </div>
           </div>
-          <div class="done-list">
-            <h4>完了したこと一覧</h4>
-            <DoneList/>
-          </div>
         </div>
-
+        <div className="footer">
+          <p>Copyright2020 riiko</p>
+        </div>
       </div>
     </AppContext.Provider>
   )
