@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import TodoForm from './TodoForm'
 import Todos from './Todos'
-import { DELETE_LIST, UPDATE_LIST } from '../actions'
+import { DELETE_LIST, UPDATE_LIST, DELETE_LIST_TODO } from '../actions'
 import AppContext from '../contexts/AppContext'
 const List = ({list}) => {
   const { dispatch } = useContext(AppContext)
@@ -20,7 +20,10 @@ const List = ({list}) => {
   const handleClickDeleteButton = e => {
     e.preventDefault()
     const result = window.confirm('リスト内のTODOも削除されますがよろしいですか？')
-    if (result) dispatch({ type: DELETE_LIST, id })
+    if (result) {
+      dispatch({ type: DELETE_LIST, id })
+      dispatch({ type: DELETE_LIST_TODO, id })
+    }
   }
   return (
     <div className="col-md-4">

@@ -46,9 +46,9 @@ const App = () => {
             </div>
           </div>
         </div>
-        <div className="footer">
+        {/* <div className="footer">
           <p>Copyright2020 riiko</p>
-        </div>
+        </div> */}
       </div>
     </AppContext.Provider>
   )
