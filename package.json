@@ -20,10 +20,6 @@
     "node": "12.13.0"
   },
   "scripts": {
-    "build": "react-scripts build && mv build docs",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "postinstall": "gulp browserify",
     "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
