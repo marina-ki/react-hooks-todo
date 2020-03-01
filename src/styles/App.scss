@@ -1,0 +1,91 @@
+.main {
+  background: linear-gradient(to top, rgba(217, 175, 217, 0.7) 0%, rgba(151, 217, 225, 0.7) 100%),url("https://cdn.pixabay.com/photo/2016/10/14/18/08/hume-1740828_1280.jpg");
+  background-size: cover;
+}
+.header {
+  padding: 20px;
+  background-color: rgba(59, 153, 153, 0.6);
+  h1 {
+    text-align: center;
+    color:white;
+    font-family: cursive;
+    letter-spacing: 1rem;
+  }
+}
+.footer {
+  padding: 10px;
+  background-color: rgba(59, 153, 153, 0.6);
+  p {
+    text-align: center;
+    color:white;
+    font-family: cursive;
+    letter-spacing: 0.5rem;
+  }
+}
+.list-form {
+  margin-bottom: 20px;
+  .list-title {
+    color: white;
+  }
+}
+
+.todo-index{
+  margin: 20px 0;
+  .btn {
+    margin: 3px;
+  }
+  .todo-form {
+    margin: 10px;
+  }
+  .btn-delete {
+    margin-bottom: 10px;
+  }
+  .todo-card {
+    margin: 10px;
+  }
+  .add-card {
+    color: rgb(85, 83, 83);
+    padding: 10px 20px 0;
+    font-size: 15px;
+  }
+
+  .list-container {
+    min-height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: rgba(211, 211, 211, 0.7);
+    .delete-list {
+      position: absolute;
+      top:0;
+      right: 10px;
+    }
+    .list-title {
+      padding: 10px 20px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+}
+
+.done-list {
+  padding-top: 20px;
+  .card {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .card-title {
+    font-size: 15px;
+  }
+  .card-body {
+    font-size: 13px;
+  }
+  .btn {
+    font-size: 13px;
+  }
+  .btn-done-delete {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+  }
+}
