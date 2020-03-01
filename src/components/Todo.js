@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { DELETE_TODO, DONE_TODO, UPDATE_TODO } from '../actions'
 import AppContext from '../contexts/AppContext'
+import TextareaAutosize from 'react-textarea-autosize';
 const Todo = ({ todo }) => {
   const { dispatch } = useContext(AppContext)
   const id = todo.id
@@ -34,13 +35,13 @@ const Todo = ({ todo }) => {
         {todo.listId === "done"?(
           <>
             <h5 className="card-title">{todo.title}</h5>
-            <p className="card-text">{todo.body}</p>
+            <TextareaAutosize className="card-text">{todo.body}</TextareaAutosize>
             <button className="btn btn-danger btn-sm" onClick={handleClickDeleteButton}>削除</button>
           </>
         ): editting?(
           <>
           <input className="card-title" value={title} onChange={e => setTitle(e.target.value)}></input>
-          <textarea className="card-text" value={body} onChange={e => setBody(e.target.value)}></textarea>
+          <TextareaAutosize className="card-text" value={body} onChange={e => setBody(e.target.value)}>{todo.body}</TextareaAutosize>
           <button className="btn btn-warning btn-sm" onClick={handleClickSaveButton}>保存</button>
         </>
         ):(
